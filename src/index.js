@@ -5,6 +5,7 @@ import PomodoroTimerComponent from "./components/PomodoroTimerComponent";
 import FooterComponent from "./components/FooterComponent";
 import "./styles/index.css";
 
+
 const App = (props) => {
   return (
     <>

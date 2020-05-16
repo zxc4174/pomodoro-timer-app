@@ -29,6 +29,11 @@ p {
   font-size: 4rem;
 }
 
+.timer:fullscreen{
+  padding-top: 25%;
+  opacity: 0.9;
+}
+
 button {
   min-width: 130px;
   min-height: 60px;
