@@ -6,7 +6,7 @@ export const FooterComponent = () => {
       <p>
         {" "}
         Copyright &copy; 2020 BY YUHSIANG LO{" "}
-        <a href="https://github.com/zxc4174/">
+        <a href="https://github.com/zxc4174/pomodoro-timer-app">
           <i className="fab fa-github"></i>
         </a>
       </p>
