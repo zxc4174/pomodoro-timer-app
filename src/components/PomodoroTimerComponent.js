@@ -75,9 +75,9 @@ export const PomodoroTimerComponent = (props) => {
         onClick={handelTimerStart}
         disabled={workTimer === 0 ? true : false}
       >
-        {isActive ? "Pause" : "Start"}
+        {isActive ? "PAUSE" : "START"}
       </button>
-      <button onClick={handelTimerRest}>Rest</button>
+      <button onClick={handelTimerRest}>RESET</button>
     </>
   );
 };

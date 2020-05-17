@@ -1,4 +1,4 @@
-# pomodoro-timer-app>
+# pomodoro-timer-app
 
 This pomodoro timer using React.js.
 

@@ -24,13 +24,18 @@ p {
   padding-top: 0;
 }
 
+i{
+  padding-top: 0;
+}
+
 .timer {
   font-family: "Black Ops One";
   font-size: 4rem;
 }
 
 .timer:fullscreen{
-  padding-top: 25%;
+  font-size: 5rem;
+  padding-top: 24%;
   opacity: 0.9;
 }
 
@@ -74,17 +79,14 @@ button::before {
   transition: all 0.3s ease-in-out 0s;
 }
 
-button:hover,
-button:focus {
+button:hover {
   transform: translateY(-6px);
 }
 
-button:hover::before,
-button:focus::before {
+button:hover::before {
   opacity: 1;
 }
-button:hover::after,
-button:focus::after {
+button:hover::after {
   animation: none;
   display: none;
 }
@@ -96,8 +98,6 @@ button:focus::after {
 footer {
   width: 100%;
   font-size: 14px;
-  position: absolute;
-  bottom: 0;
   padding-bottom: 1rem;
 }
 
@@ -109,6 +109,7 @@ a {
 i:hover {
   transform: scale(1.25);
 }
+
 
 /*
 .timer::after {
