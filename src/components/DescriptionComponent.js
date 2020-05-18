@@ -10,19 +10,16 @@ import React, { useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
-            maxWidth: 345,
-        },
         topicText: {
             cursor: "pointer",
             color: "#4fd1c5"
         },
         titleText: {
-            color: "black",
+            color: "#202020",
         },
         contentText: {
             backgroundColor: "#eeeeee",
-            color: "black",
+            color: "#202020",
             fontSize: "0.75rem",
             marginBottom: 0,
             padding: "1rem",
@@ -58,7 +55,7 @@ export const DescriptionComponent = () => {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <button onClick={handleClose} variant="contained">
+                    <button onClick={handleClose} variant="contained" className="action-button">
                         Close
                     </button>
                 </DialogActions>
