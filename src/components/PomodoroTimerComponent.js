@@ -66,7 +66,7 @@ export const PomodoroTimerComponent = (props) => {
 
   return (
     <>
-      <p className="timer">
+      <p className={isActive ? "timer circle" : "timer"}>
         {" "}
         {Math.floor(workTimer / 60)}:
         {workTimer - Math.floor(workTimer / 60) * 60 < 10 ? "0" : ""}

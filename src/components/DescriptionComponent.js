@@ -3,16 +3,20 @@ import {
     DialogActions,
     DialogContent,
     DialogContentText,
-    DialogTitle
+    DialogTitle,
+    IconButton
 } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React, { useState } from "react";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        topicText: {
+        descriptionButton: {
             cursor: "pointer",
-            color: "#4fd1c5"
+            color: "#4fd1c5",
+            "&:hover": {
+                color: "#00ffcb"
+            },
         },
         titleText: {
             color: "#202020",
@@ -25,6 +29,14 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: "1rem",
             textAlign: "left",
         },
+        closeButton: {
+            padding: 0,
+            position: 'absolute',
+            right: theme.spacing(2),
+            top: theme.spacing(1),
+            color: theme.palette.grey[500],
+            alignItems: "center"
+        }
     }),
 );
 
@@ -36,12 +48,17 @@ export const DescriptionComponent = () => {
 
     return (
         <>
-            <span onClick={handleShow} className={classes.topicText}>
+            <span onClick={handleShow} className={classes.descriptionButton}>
                 ( See more about Pomodoro Technique )
             </span>
-            <Dialog open={show}>
+            <Dialog open={show} onKeyUp={(event) => { if (event.keyCode === 27) handleClose(); }}>
                 <DialogTitle>
                     <strong className={classes.titleText}>Pomodoro Technique Description</strong>
+                    <div className={classes.closeButton} onClick={handleClose} >
+                        <IconButton aria-label="close" style={{ padding: 0, width: "33px", height: "33px" }} >
+                            <i className="fas fa-times" style={{ color: "lightGray", padding: 0, marginTop: "-10px" }}></i>
+                        </IconButton>
+                    </div>
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText className={classes.contentText}>

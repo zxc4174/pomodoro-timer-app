@@ -73,7 +73,7 @@ export const RestTimerComponent = (props) => {
 
     return (
         <>
-            <Dialog open={show}>
+            <Dialog open={show} onKeyUp={(event) => { if (event.keyCode === 27) handleClose(); }}>
                 <DialogTitle >
                     <strong className={classes.titleText}>Rest Timer</strong>
                     <div className={classes.closeButton} onClick={handleClose} >

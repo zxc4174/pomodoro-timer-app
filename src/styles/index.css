@@ -92,10 +92,6 @@ i{
   display: none;
 }
 
-.disabled-button {
-  color: lightgray;
-}
-
 footer {
   width: 100%;
   font-size: 14px;
@@ -112,8 +108,8 @@ i:hover {
 }
 
 
-/*
-.timer::after {
+
+.circle::after {
   content: "";
   width: 30px;
   height: 30px;
@@ -137,4 +133,3 @@ i:hover {
     opacity: 0;
   }
 }
-*/
