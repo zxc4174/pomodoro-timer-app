@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import tomatoIcon from "../images/tomato.png";
-import DescriptionComponent from "./DescriptionComponent";
+import DescriptionDialogComponent from "./DescriptionDialogComponent";
+
 
 export const HeaderComponent = (props) => {
   return (
@@ -14,11 +16,24 @@ export const HeaderComponent = (props) => {
         {props.restingTime}
         minutes.
         <br />
-        For a total time of {props.workingTime + props.restingTime} minutes. <DescriptionComponent />
+        For a total time of {props.workingTime + props.restingTime} minutes. <DescriptionDialogComponent />
       </p>
     </header>
   );
 };
+
+// 验证
+HeaderComponent.propTypes = {
+  workingTime: PropTypes.number,
+  restingTime: PropTypes.number
+}
+
+// 预设值
+HeaderComponent.defaultProps = {
+  workingTime: 25,
+  restingTime: 5
+}
+
 
 export default HeaderComponent;
 

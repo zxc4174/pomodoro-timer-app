@@ -8,6 +8,7 @@ import {
 } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React, { useState } from "react";
+import Slide from '@material-ui/core/Slide';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -40,7 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export const DescriptionComponent = () => {
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="down" ref={ref} {...props} />;
+});
+
+export const DescriptionDialogComponent = () => {
     const classes = useStyles();
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -51,7 +56,7 @@ export const DescriptionComponent = () => {
             <span onClick={handleShow} className={classes.descriptionButton}>
                 ( See more about Pomodoro Technique )
             </span>
-            <Dialog open={show} onKeyUp={(event) => { if (event.keyCode === 27) handleClose(); }}>
+            <Dialog open={show} onKeyUp={(event) => { if (event.keyCode === 27) handleClose(); }} TransitionComponent={Transition}>
                 <DialogTitle>
                     <strong className={classes.titleText}>Pomodoro Technique Description</strong>
                     <div className={classes.closeButton} onClick={handleClose} >
@@ -82,4 +87,4 @@ export const DescriptionComponent = () => {
 }
 
 
-export default DescriptionComponent;
+export default DescriptionDialogComponent;

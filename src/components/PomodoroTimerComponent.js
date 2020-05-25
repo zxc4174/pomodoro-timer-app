@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RestTimerComponent from "./RestTimerComponent";
+import RestTimerDialogComponent from "./RestTimerDialogComponent";
 import alarm from "../audio/alarm.mp3";
 
 let audio = new Audio(alarm);
@@ -82,7 +82,7 @@ export const PomodoroTimerComponent = (props) => {
         {isActive ? "PAUSE" : "START"}
       </button>
       <button onClick={handelTimerReset} className="action-button">RESET</button>
-      {showRestDialog ? <RestTimerComponent restingTime={props.restingTime} /> : null}
+      {showRestDialog ? <RestTimerDialogComponent restingTime={props.restingTime} /> : null}
     </>
   );
 };

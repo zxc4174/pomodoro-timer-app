@@ -8,7 +8,9 @@ import {
 } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import React, { useState, useEffect } from "react";
+import Slide from '@material-ui/core/Slide';
 import alarm from "../audio/alarm.mp3";
+
 
 let audio = new Audio(alarm);
 function playAlarm() {
@@ -31,8 +33,12 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="down" ref={ref} {...props} />;
+});
 
-export const RestTimerComponent = (props) => {
+
+export const RestTimerDialogComponent = (props) => {
     const classes = useStyles();
     const [show, setShow] = useState(true);
     const [restTimer, setRestTimer] = useState(props.restingTime * 60);
@@ -73,7 +79,7 @@ export const RestTimerComponent = (props) => {
 
     return (
         <>
-            <Dialog open={show} onKeyUp={(event) => { if (event.keyCode === 27) handleClose(); }}>
+            <Dialog open={show} onKeyUp={(event) => { if (event.keyCode === 27) handleClose(); }} TransitionComponent={Transition}>
                 <DialogTitle >
                     <strong className={classes.titleText}>Rest Timer</strong>
                     <div className={classes.closeButton} onClick={handleClose} >
@@ -108,4 +114,4 @@ export const RestTimerComponent = (props) => {
 }
 
 
-export default RestTimerComponent;
+export default RestTimerDialogComponent;
